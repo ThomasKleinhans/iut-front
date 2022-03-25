@@ -1,6 +1,9 @@
 <template>
     <div class="homepage">
-        <ReciepeCard v-for="reciepe in reciepes" :key="reciepe.id" :name="reciepe.attributes.Name" :image="reciepe.attributes.Image.data.attributes.url"/>
+        <ReciepeCard 
+            v-for="reciepe in reciepes" 
+            :key="reciepe.id" 
+            :reciepe="reciepe"/>
     </div>
 </template>
 
@@ -20,6 +23,7 @@ export default {
     mounted () {
         api.get('reciepes?populate=*').then((response) => {
             this.reciepes = response.data.data
+            console.log(this.reciepes)
         });
     },
 }
