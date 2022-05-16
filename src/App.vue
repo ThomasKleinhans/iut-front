@@ -20,6 +20,6 @@ export default {
 }
 
 body{
-  background: rgb(3, 3, 3);
+  background: white;
 }
 </style>
